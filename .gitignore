@@ -1,0 +1,297 @@
+# =============================================================================
+# GCP DevOps Training Repository — .gitignore
+# =============================================================================
+
+# =============================================================================
+# GCP Credentials & Service Account Keys — NEVER commit these
+# =============================================================================
+
+# Service account key files (JSON format)
+*-sa-key.json
+*-service-account-key.json
+sa-key.json
+service-account.json
+key.json
+credentials.json
+gcp-credentials.json
+*credentials*.json
+
+# Application Default Credentials
+.config/gcloud/
+application_default_credentials.json
+
+# gcloud user credentials
+gcloud-user-token.json
+
+# Kubeconfig files with cluster credentials
+kubeconfig
+kubeconfig.yaml
+.kube/config
+
+# =============================================================================
+# Terraform
+# =============================================================================
+
+# Terraform state files (contain sensitive resource details and secrets)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform lock file for providers (commit .terraform.lock.hcl, not the dir)
+.terraform/
+.terraform.tfstate.lock.info
+
+# Terraform variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+# Exception: allow example var files to be committed
+!*.tfvars.example
+!example.tfvars
+
+# Terraform plan output (may contain sensitive values)
+*.tfplan
+plan.out
+tfplan
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# =============================================================================
+# Environment Variables & Secrets
+# =============================================================================
+
+# .env files (local environment configuration)
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+!.env.template
+
+# Secret files
+secrets/
+.secrets/
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+*.pkcs12
+
+# Certificate files
+*.crt
+*.cer
+*.der
+# Exception: allow sample/example certs
+!sample-*.crt
+!example-*.crt
+
+# Private SSH keys
+id_rsa
+id_ecdsa
+id_ed25519
+*.private
+
+# =============================================================================
+# Cloud Build & CI/CD
+# =============================================================================
+
+# Cloud Build local output
+.cloudbuild/
+
+# GitHub Actions secrets (if using act for local testing)
+.secrets
+
+# =============================================================================
+# Kubernetes
+# =============================================================================
+
+# Local kubeconfig overrides
+*.kubeconfig
+
+# Helm chart dependencies (generated, not source)
+charts/
+Chart.lock
+
+# Skaffold cache
+.skaffold/
+
+# =============================================================================
+# Docker
+# =============================================================================
+
+# Docker build context
+.dockerignore
+
+# Docker Compose local overrides
+docker-compose.override.yml
+docker-compose.local.yml
+
+# =============================================================================
+# Editors & IDEs
+# =============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+# Exception: allow shared launch/task configs
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# JetBrains IDEs (IntelliJ, GoLand, PyCharm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# =============================================================================
+# Programming Language Artifacts
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+venv/
+.venv/
+env/
+.env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.pyc
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json.bak
+.npm
+.node_repl_history
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.sum.backup
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+build/
+*.class
+
+# =============================================================================
+# Logs & Temporary Files
+# =============================================================================
+
+# Log files
+*.log
+logs/
+log/
+*.log.*
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# OS-generated thumbnails
+Thumbs.db
+ehthumbs.db
+
+# =============================================================================
+# Testing
+# =============================================================================
+
+# Test output
+test-results/
+test-reports/
+coverage/
+*.coverage
+.nyc_output/
+
+# =============================================================================
+# Miscellaneous
+# =============================================================================
+
+# Compiled binaries
+bin/
+dist/
+
+# Archive files (may contain credentials)
+*.zip
+*.tar.gz
+*.tgz
+*.tar
+# Exception: allow example/sample archives
+!sample-*.zip
+!example-*.tar.gz
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Session notes and scratch files
+scratch/
+notes/
+TODO.local.md
+NOTES.local.md
+
+# Cloud Shell editor settings
+.cloudshell/
+
+# Local test script outputs
+output/
+results/
